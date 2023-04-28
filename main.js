@@ -29,11 +29,9 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 // contains digits of a valid credit card number and return...
 // false when it is invalid
 function validateCred(arrayToValidate)
-{
-    stringSecondState = '';
-    let arraySecondState = [];
-    
+{   
     let arrayFirstState = arrayToValidate.slice();
+    let arraySecondState = [];
     arrayFirstState.reverse();
     arrayFirstState.forEach((element, index)=>{
         if ((index %2))
@@ -50,10 +48,11 @@ function validateCred(arrayToValidate)
     arraySecondState.forEach((element)=>{
         elementSum = elementSum + element;
     })
-    //console.log(elementSum%10==0?true:false);
     return elementSum%10==0?true:false;
 }
 
+//Take a list of arrays as parameter, return a list of invalid...
+//credit card numbers
 function findInvalidCards(validateList)
 {
     let invalidatedCards = [];
@@ -109,29 +108,7 @@ function idInvalidCardCompanies(invalidatedList)
 
 console.log(findInvalidCards(batch));
 console.log(idInvalidCardCompanies(findInvalidCards(batch)));
-/*
-//console.log(mystery1);
-console.log(validateCred(mystery1));
-//console.log(mystery1);
-console.log(validateCred(mystery2));
-//console.log(mystery2);
-console.log(validateCred(mystery3));
-//console.log(mystery3);
-console.log(validateCred(mystery4));
-//console.log(mystery4);
-console.log(validateCred(mystery5));
-//console.log(mystery5);
-console.log(validateCred(invalid1));
-console.log(validateCred(invalid2));
-console.log(validateCred(invalid3));
-console.log(validateCred(invalid4));
-console.log(validateCred(invalid5));
-console.log(validateCred(valid1));
-console.log(validateCred(valid2));
-console.log(validateCred(valid3));
-console.log(validateCred(valid4));
-console.log(validateCred(valid5));
-*/
+
 
 
 
