@@ -51,8 +51,8 @@ function validateCred(arrayToValidate)
     return elementSum%10==0?true:false;
 }
 
-//Take a list of arrays as parameter, return a list of invalid...
-//credit card numbers
+//Take a list of credit card numbers as arrays for the parameter, return a list...
+//of invalid credit card numbers
 function findInvalidCards(validateList)
 {
     let invalidatedCards = [];
@@ -64,7 +64,8 @@ function findInvalidCards(validateList)
     });
     return invalidatedCards;
 }
-
+//Take a list of invalid credit card numbers as arrays for the parameter, return...
+//a list of credit card companies associated with those invalid credit cards
 function idInvalidCardCompanies(invalidatedList)
 {
     let listCompaniesWithInvalidCard = [];
